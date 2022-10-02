@@ -1,0 +1,9 @@
+[package]
+    name = "rs_math-game"
+    version = "0.1.0"
+    edition = "2021"
+    default-run = "rs_math-game"
+
+[dependencies]
+    rand = "0.8.5"
+    colored = "2.0.0"
