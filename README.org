@@ -6,4 +6,4 @@ _Usage_:
 - To display statistics about your performance, execute `make stats`
 
 _Minor Problems_:
-- For questions like $x^0 = ?$, the program will show `false` when answering correctly with `1`.
+- For questions like $x^0=...$, the program will show `false` when answering correctly with `1`.
