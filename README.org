@@ -1,34 +1,9 @@
-_Features_:
-- can pose mathematical problems involving 2 variables $x$ and $y$,
-  which are connected by one of the 4 fundamental mathematical operations 
-  + addition,
-  + subtraction,
-  + multiplication, or
-  + division.
+_Prerequisites_:
+- As of yet, an installation of Rust & Cargo is required to play.
 
-_Minor Problem_:
-- e.g. Q: "5 / 0"
-  + displayed solution:     "inf" via f64.into::<String>()
-  + if answer == "inf":  panic due to string-parse::<f64>
+_Usage_:
+- To run the game, navigate to the folder containing this file in your shell, then execute `make`.
+- To display statistics about your performance, execute `make stats`
 
-_Solution_:
-  + save answer, i.e. user-input as string,
-    then compare with format!(solution) 
-
-_Future Game-Modes_:
-
-1. Kleines 1x1
-   + Q: x, y <= 10
-   + A: x * y
-
-2. Quadrate
-   + Q: x
-   + A: x^2
-
-3. Current
-   + Q: x, y <= 15, 30
-   + A: f(x, y)  mit f in [+,-,*,/]
-
-4. Higher Numbers
-   + Q: x, y <= X, Y (input)
-   + A: f(x, y)  mit f in [+,-,*,/]
+_Minor Problems_:
+- For questions like $x^0 = ?$, the program will show `false` when answering correctly with `1`.
