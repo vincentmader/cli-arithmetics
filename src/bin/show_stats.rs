@@ -21,13 +21,13 @@ fn main() {
 
         let contents = load_savefile_to_string(game_mode);
         let lines: Vec<&str> = contents.split("\n").collect();
-        let nr_of_lines = lines.len();
+        let nr_of_lines = lines.len() - 1;
 
         let mut nr_of_correct_answers = 0;
         let mut nr_of_incorrect_answers = 0;
         let mut average_duration = 0;
         let mut variance = 0.;
-        for line in lines[0..nr_of_lines - 1].iter() {
+        for line in lines[0..nr_of_lines].iter() {
             let split: Vec<&str> = line.split(";").collect();
             let _time = split[0];
             let _question = split[1];
