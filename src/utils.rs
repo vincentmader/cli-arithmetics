@@ -1,4 +1,5 @@
 use crate::game::GameMode;
+use colored::Colorize;
 use std::io::Write;
 
 pub fn get_user_input() -> String {
@@ -20,20 +21,20 @@ pub fn append_to_file(path_to_file: &str, new_content: &str) {
 }
 
 pub fn ask_for_gamemode() -> GameMode {
-    println!();
-    println!("   ------------ ");
-    println!("  | Quik Mafs! |");
-    println!("   ------------ ");
-
-    println!("\n  Choose game-mode:");
-    println!("  -----------------");
-    println!("    1. Find x^2 for x   in [0, 25].");
-    println!("    2. Find x*y for x,y in [0, 25].");
-    println!("    3. Find x~y for x,y in [0, 25], & for ~ in {{+,-,*,/}}.");
-    println!("    4. Find 2^x for x   in [0, 10].");
-    println!("    5. Find x^y for x   in [0, 10], & for y in [0, 5].");
-
-    print!("\n  Choice: ");
+    println!("{}", format!("\n  Choose game-mode:").blue());
+    println!("{}", format!("  -----------------").blue());
+    let lines = [
+        "Find x^2 for x   in [0, 25].",
+        "Find x*y for x,y in [0, 25].",
+        "Find x~y for x,y in [0, 25], & for ~ in {{+,-,*,/}}.",
+        "Find 2^x for x   in [0, 10].",
+        "Find x^y for x   in [0, 10], & for y in [0, 5].",
+    ];
+    for (line_idx, line) in lines.iter().enumerate() {
+        let line_idx = format!("{}", line_idx + 1).blue();
+        println!("    {}. {}", line_idx, line);
+    }
+    print!("{}", format!("\n  Choice: ").blue());
     std::io::stdout().flush().unwrap();
 
     let game_mode = get_user_input();
