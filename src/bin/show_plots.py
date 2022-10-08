@@ -12,7 +12,7 @@ N_MOVING_AVG = 50
 
 def load_savefile_to_string(filename):
     # Load savefile to string, pretty self-explanatory.
-    print(f"Loading stat-file \"{filename}\"")
+    print(f"Loading stat-file \"{filename}\"...")
     path_to_file = os.path.join(PATH_TO_STATFILES, filename)
     with open(path_to_file, "r") as fp:
         return fp.readlines()
