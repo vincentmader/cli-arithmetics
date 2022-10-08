@@ -22,7 +22,7 @@ impl QuestionV04 {
     pub fn new() -> Self {
         let mut rng = rand::thread_rng();
         // Generate two random numbers.
-        let x = rng.gen_range(0..=10);
+        let x = rng.gen_range(0..=15);
         // Generate solution.
         let solution = 2_f64.powf(x as f64);
         let solution = Solution(solution);

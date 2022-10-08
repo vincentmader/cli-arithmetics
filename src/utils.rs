@@ -27,7 +27,7 @@ pub fn ask_for_gamemode() -> GameMode {
         "Find x^2 for x   in [0, 25].",
         "Find x*y for x,y in [0, 25].",
         "Find x~y for x,y in [0, 25], & for ~ in {{+,-,*,/}}.",
-        "Find 2^x for x   in [0, 10].",
+        "Find 2^x for x   in [0, 15].",
         "Find x^y for x   in [0, 10], & for y in [0, 5].",
     ];
     for (line_idx, line) in lines.iter().enumerate() {
