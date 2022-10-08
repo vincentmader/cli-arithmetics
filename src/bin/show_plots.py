@@ -68,10 +68,13 @@ def get_moving_avg_from_correctness_list(c, N):
 
 
 def create_plot(filename, moving_avg):
-    plt.plot(moving_avg)
+    plt.style.use('~/.config/matplotlib/dark.mplstyle')
+    plt.plot(moving_avg, 'g')
     plt.title(f"{filename}")
     plt.xlabel("Question Number (\"Time\")")
     plt.ylabel(f"Accuracy Moving Average (N={N_MOVING_AVG})")
+    plt.xlim(0, len(moving_avg))
+    plt.ylim(0, 1)
     plt.show()
     filename = filename.split('.')[0] + '.png'
     path_to_fig = os.path.join(PATH_TO_FIGURES, filename)
