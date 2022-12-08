@@ -54,7 +54,7 @@ def check_correctness(t, q, s, a, d):
 def get_moving_avg_from_correctness_list(c, N):
     accuracy_moving_avg = []
     # Loop over list containing correctness-boolean values.
-    for i, _ in enumerate(c):
+    for i, _ in enumerate(c[1:]):
         summa = 0
         # Loop over last N questions (if N<i), add 1 to sum if correct.
         for j in range(min(i, N)):
