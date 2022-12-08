@@ -1,6 +1,6 @@
 .DS_Store
-/figures
-/progress
-/saves
-/target
+/figures/
+/progress/
+/saves/
+/target/
 Cargo.lock
