@@ -82,6 +82,7 @@ def create_plot(filename, moving_avg):
 
 
 if __name__ == "__main__":
+    print()
     for filename in sorted(os.listdir(PATH_TO_STATFILES)):
         if not filename.endswith(".txt"):
             continue
