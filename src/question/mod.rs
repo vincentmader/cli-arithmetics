@@ -13,6 +13,7 @@ pub use question_v02::QuestionV02;
 pub use question_v03::QuestionV03;
 pub use question_v04::QuestionV04;
 pub use question_v05::QuestionV05;
+use std::f64::INFINITY;
 use std::io::Write;
 
 pub trait Question: ToString {
@@ -32,7 +33,18 @@ pub trait Question: ToString {
     }
 
     fn check_answer(&self, answer: &Answer) -> bool {
-        let error = (self.solution().0 - answer.0).abs() / self.solution().0;
+        let solution = self.solution();
+        let error = if solution.0 == 0. {
+            (self.solution().0 - answer.0).abs()
+        } else if solution.0 == INFINITY {
+            if answer.0 == INFINITY {
+                0.
+            } else {
+                INFINITY
+            }
+        } else {
+            (self.solution().0 - answer.0).abs() / self.solution().0
+        };
         let correct = error < 0.05;
         let correct_str = match correct {
             true => format!("true ").green(),
