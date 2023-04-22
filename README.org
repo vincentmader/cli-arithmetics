@@ -1,9 +1,8 @@
 _Prerequisites_:
 - As of yet, an installation of Rust & Cargo is required to play.
+  (See [[https://rustup.rs][rustup.rs]] for installation instructions.)
 
 _Usage_:
-- To run the game, navigate to the folder containing this file in your shell, then execute `make`.
-- To display statistics about your performance, execute `make stats`
-
-_Minor Problems_:
-- For questions like $x^0=...$, the program will show `false` when answering correctly with `1`.
+- To run the game, open a shell & navigate to the folder containing this file, then execute `make`.
+  (If you do not have the `make` tool installed, you can also use `cargo run`)
+- To display statistics about your performance, execute `make stats`.
