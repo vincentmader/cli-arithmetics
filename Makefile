@@ -1,4 +1,5 @@
 run:
+	mkdir -p ./saves
 	cargo run --release
 stats:
 	cargo run --bin show_stats
