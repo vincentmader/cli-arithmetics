@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 from datetime import datetime as dt
 import os
+from pathlib import Path
 
 import matplotlib.pyplot as plt
-import numpy as np
 
-PATH_TO_FIGURES = './figures'
-PATH_TO_STATFILES = './saves'
+PATH_TO_FIGURES = Path("..", "..", "figures")
+PATH_TO_STATFILES = Path("..", "..", "saves")
 N_MOVING_AVG = 50
+os.makedirs(PATH_TO_FIGURES, exist_ok=True)
 
 
 def load_savefile_to_string(filename):
@@ -68,7 +69,8 @@ def get_moving_avg_from_correctness_list(c, N):
 
 
 def create_plot(filename, moving_avg):
-    plt.style.use('~/.config/matplotlib/dark.mplstyle')
+    path = Path("..", "..", "lib", "mpl-styles", "dark.mplstyle")
+    plt.style.use(path)
     plt.plot(moving_avg, 'g')
     plt.title(f"{filename}")
     plt.xlabel("Question Number (\"Time\")")
